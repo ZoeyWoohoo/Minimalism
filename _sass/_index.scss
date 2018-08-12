@@ -1,0 +1,133 @@
+@import "common";
+
+body {
+  @include flex(column);
+  -webkit-box-align: center;
+     -ms-flex-align: center;
+        align-items: center;
+  -webkit-box-pack: end;
+     -ms-flex-pack: end;
+   justify-content: flex-end;
+
+  min-height: 100vh;
+  margin: 0;
+
+  background: #f0f0f0;
+}
+
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.index-avatar {
+  position: relative;
+  bottom: -95px;
+
+  border: #f0f0f0 solid 20px;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+
+  &::before{
+    -webkit-animation: pulse 1s linear infinite;
+            animation: pulse 1s linear infinite;
+    border: #ffffff solid 10px;
+    border-radius: 50%;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    content: ' ';
+    height: 140%;
+    left: -20%;
+    opacity: .9;
+    position: absolute;
+    top: -20%;
+    -webkit-transform: scale(0.714);
+            transform: scale(0.714);
+    width: 140%;
+    z-index: 1;
+  }
+}
+
+.index-avatar img {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  @include border-radius(50%);
+  @include material-box-shadow();
+}
+
+@media (min-width: 769px) {
+  .index-avatar img {
+    &:hover {
+      @include material-box-shadow(3);
+    }
+  }
+}
+
+.index-content {
+  width: 100%;
+  min-height: 70vh;
+  height: auto;
+
+  @include material-box-shadow(1);
+
+  background: #fff;
+}
+
+.index-content h1, p {
+  position: relative;
+  text-align: center;
+}
+
+.index-content h1 {
+  padding-top: 115px;
+  font-size: 2em;
+}
+
+.index-content p {
+  font-size: 1em;
+  padding-top: 10px;
+}
+
+.index-contact {
+  padding-top: 20px;
+}
+
+.index-contact span a {
+  font-size: 2em;
+  color: #f0f0f0;
+  text-decoration: none;
+  margin: 0 10px;
+  @include material-transition();
+}
+
+@media (min-width: 769px) {
+  .index-contact span a {
+    &:hover {
+      color: #000000;
+    }
+  }
+}
+
+@media (max-width: 415px) {
+  .index-avatar {
+    width: 100px;
+    height: 100px;
+    bottom: -70px;
+    border: #f0f0f0 solid 15px;
+  }
+
+  .index-content h1 {
+    padding-top: 95px;
+    font-size: 1em;
+  }
+
+  .index-content p {
+    font-size: 0.9em;
+  }
+
+  .index-contact span a {
+    font-size: 1.5em;
+  }
+}

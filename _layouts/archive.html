@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "zh-cmn-Hans" }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      {% if page.title %}
+        {{ page.title }}
+      {% else %}
+        归档
+      {% endif %}
+    </title>
+
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    {% include favicon.html %}
+
+    <link rel="stylesheet" href="{{ "/assets/css/archive.css" }}">
+    {% seo %}
+    {% include statistics_head.html %}
+  </head>
+  <body>
+    {% include header.html %}
+
+    <section class="timeline">
+      <p class="timeline-title">一共输出 {{ site.posts.size }} 篇文章</p>
+      <ul>
+        {% for post in site.posts %}
+          {% if post.next != null %}
+            {% capture postYear %} {{ post.date | date: "%Y" }} {% endcapture %}
+            {% capture nextPostYear %} {{ post.next.date | date: "%Y" }} {% endcapture %}
+            {% if postYear != nextPostYear %}
+              <p id="year{{ post.date | date: '%Y' }}">{{ post.date | date: '%Y' }}</p>
+            {% endif %}
+          {% else %}
+            <p id="year{{ post.date | date: '%Y' }}">{{ post.date | date: '%Y' }}</p>
+          {% endif %}
+
+          <li>
+            <div>
+              <time>{{ post.date | date:"%m-%d" }}</time>
+              <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+            </div>
+          </li>
+
+        {% endfor %}
+      </ul>
+    </section>
+
+    {% include footer.html %}
+
+    <script src="{{ "/assets/js/timeline.js" }}"></script>
+
+    {% if site.lock_menu and site.lock_menu == true %}
+    <script src="{{ "/assets/js/lock_menu.js" }}"></script>
+    {% endif %}
+
+    {% include statistics_body.html %}
+  </body>
+</html>

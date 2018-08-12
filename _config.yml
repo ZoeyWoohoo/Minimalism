@@ -1,0 +1,17 @@
+exclude:
+  - script
+  - docs
+
+sass:
+  style: compressed
+
+plugins:
+  - rouge
+  - kramdown
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jemoji
+
+exclude:
+  - Gemfile
+  - Gemfile.lock

@@ -1,0 +1,51 @@
+@import "common";
+
+body {
+  @include flex(column);
+
+  min-height: 100vh;
+  margin: 0;
+
+  background: #ffffff;
+
+  word-break: break-word;
+  word-wrap: break-word;
+}
+
+img {
+  display: block;
+
+  max-width: 100%;
+  max-height: 600px;
+  margin: 40px auto;
+}
+
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+header {
+  margin: 30px 0 !important;
+
+  a::before {
+    -webkit-animation: twinkle 2s linear infinite !important;
+            animation: twinkle 2s linear infinite !important;
+  }
+}
+
+.title {
+  margin: 30px auto 10px !important;
+}
+
+.title .title-tip {
+  right: 105% !important;
+}
+
+.article-title-description {
+  margin: 0 auto;
+  padding: 0 30px;
+  color: #999;
+  font-size: 100%;
+  line-height: 1.7;
+  text-align: center;
+}

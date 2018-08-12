@@ -1,0 +1,12 @@
+{% if site.favicon %}
+<link rel="shortcut icon" href="{{ site.favicon }}" />
+<link rel="bookmark" href="{{ site.favicon }}" type="image/x-icon" />
+{% else %}
+  {% assign image_files = site.static_files | where: "image", true %}
+  {% for image in image_files %}
+    {% if image.basename == 'favicon' %}
+    <link rel="shortcut icon" href="{{ image.path }}" />
+    <link rel="bookmark" href="{{ image.path }}" type="image/x-icon" />
+    {% endif %}
+  {% endfor %}
+{% endif %}

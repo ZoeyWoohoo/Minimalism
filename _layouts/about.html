@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "zh-cmn-Hans" }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      {% if page.title %}
+        {{ page.title }}
+      {% else %}
+        关于
+      {% endif %}
+    </title>
+
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    {% include favicon.html %}
+
+    <link rel="stylesheet" href="{{ "/assets/css/about.css" }}">
+    <link rel="stylesheet" href="{{ "/assets/css/markdown.css" }}">
+    {% seo %}
+    {% include statistics_head.html %}
+  </head>
+  <body>
+    {% include header.html %}
+
+    {% include content.html %}
+
+    {% include footer.html %}
+
+    <script src="{{ "/assets/js/link_target.js" }}"></script>
+
+    {% if site.lock_menu and site.lock_menu == true %}
+    <script src="{{ "/assets/js/lock_menu.js" }}"></script>
+    {% endif %}
+    {% if site.copy_with_declaration and site.copy_with_declaration == true %}
+    <script src="{{ "/assets/js/copy_with_declaration.js" }}"></script>
+    {% elsif site.lock_copy and site.lock_copy == true %}
+    <script src="{{ "/assets/js/lock_copy.js" }}"></script>
+    {% endif %}
+
+    {% include statistics_body.html %}
+  </body>
+</html>

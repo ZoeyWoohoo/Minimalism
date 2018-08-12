@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "zh-cmn-Hans" }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ site.title }}</title>
+
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    {% include favicon.html %}
+
+    <link rel="stylesheet" href="{{ "/assets/css/articles.css" }}">
+    {% seo %}
+    {% include statistics_head.html %}
+  </head>
+  <body>
+    <div class="header">
+      <a href="/">{{ site.title }}</a>
+      <a href="/archive">归档</a>
+      <a href="/categories">分类</a>
+      <a href="/about">关于</a>
+    </div>
+
+    <div class="article-content">
+      {% for post in site.posts %}
+      <article class="article-block">
+        <a href="{{ post.url }}">
+          <div class="article-header">
+            <p class="article-title">{{ post.title }}</p>
+            <p class="article-date">{{ post.date|date: "%Y-%m-%d" }}</p>
+          </div>
+        </a>
+
+        {% if site.show_excerpt == true %}
+        <div class="article-excerpt">
+          <p>{{ post.excerpt }}</p>
+        </div>
+        {% endif %}
+      </article>
+      {% endfor %}
+    </div>
+
+    {% include footer.html %}
+
+    {% if site.lock_menu and site.lock_menu == true %}
+    <script src="{{ "/assets/js/lock_menu.js" }}"></script>
+    {% endif %}
+
+    {% include statistics_body.html %}
+  </body>
+</html>

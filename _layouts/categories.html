@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en" }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      {% if page.title %}
+        {{ page.title }}
+      {% else %}
+        分类
+      {% endif %}
+    </title>
+
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    {% include favicon.html %}
+
+    <link rel="stylesheet" href="{{ "/assets/css/categories.css" }}">
+    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+    {% seo %}
+    {% include statistics_head.html %}
+  </head>
+  <body>
+    {% include header.html %}
+
+    <div class="tags-content">
+      <div class="content">
+        <div class="categories">
+          <h2>分类</h2>
+          {% for category in site.categories %}
+          <p id="{{category | first}}"><i class="fa fa-folder"></i> {{category | first}} (共 {{ category | last | size }} 篇)</p>
+          <div class="articles">
+            {% for posts in category  %}
+                {% for post in posts %}
+                    {% if post.url %}
+                      <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+                    {% endif %}
+                {% endfor %}
+            {% endfor %}
+          </div>
+          {% endfor %}
+        </div>
+
+        <hr>
+
+        <div class="tags">
+          <h2>标签</h2>
+          {% capture tags %}
+            {% for tag in site.tags %}
+              {{ tag[0] }}
+            {% endfor %}
+          {% endcapture %}
+          {% assign sortedtags = tags | split:' ' | sort %}
+
+          {% for tag in sortedtags %}
+            <p id="{{ tag }}"><i class="fa fa-tag"></i> {{ tag }} (共 {{ site.tags[tag].size }} 篇)</p>
+            <div class="articles">
+              {% for post in site.tags[tag] %}
+                <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+              {% endfor %}
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+    {% include footer.html %}
+
+    {% if site.lock_menu and site.lock_menu == true %}
+    <script src="{{ "/assets/js/lock_menu.js" }}"></script>
+    {% endif %}
+
+    {% include statistics_body.html %}
+  </body>
+</html>

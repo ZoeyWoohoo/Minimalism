@@ -1,0 +1,132 @@
+<div class="page-content">
+  <div class="content" id="post-content">
+    <p>{{ content }}</p>
+
+    <div class="licenses">
+      <hr>
+      <p>本作品采用<a rel="license"
+        href="http://creativecommons.org/licenses/by-nc-nd/4.0/"
+        target="_blank">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>进行许可。</p>
+    </div>
+
+    {% if site.reward and site.reward == true %}
+    {% unless page.reward != null and page.reward == false %}
+    <div class="reward">
+      <hr>
+      <div class="reward-qr-code" style="display: none">
+        {% assign image_files = site.static_files | where: "image", true %}
+        {% for image in image_files %}
+          {% if image.basename == 'alipay' or image.basename == 'wechat' %}
+          <div class="{{ image.basename }}">
+            <img src="{{ image.path }}" alt="{{ image.basename }} reward qr code">
+            {% case image.basename %}
+            {% when 'alipay' %}
+            <span>支付宝打赏</span>
+            {% when 'wechat' %}
+            <span>微信打赏</span>
+            {% endcase %}
+          </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+
+      {% if site.reward_description %}
+      <p>{{ site.reward_description }}</p>
+      {% endif %}
+      <div id="btn-show-reward">
+        <div onclick="showReward()">赏</div>
+      </div>
+    </div>
+    {% endunless %}
+    {% endif %}
+
+    {% if site.comment and site.comment == true %}
+    {% unless page.comment != null and page.comment == false %}
+
+      {% if site.gitment_client_id and site.gitment_secret %}
+      <hr>
+      <div id="btn-show-comment">
+        <div onclick="showComment()">显示评论</div>
+      </div>
+      <div id="comment" style="display: none">
+        <!-- gitment 代码 -->
+        <div id="container"></div>
+        <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+        <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+        <script>
+          const myTheme = {
+            render(state, instance) {
+              const container = document.createElement('div')
+              container.lang = "en-US"
+              container.className = 'gitment-container gitment-root-container'
+              container.appendChild(instance.renderHeader(state, instance))
+              container.appendChild(instance.renderEditor(state, instance))
+              container.appendChild(instance.renderComments(state, instance))
+              container.appendChild(instance.renderFooter(state, instance))
+              return container
+            },
+          }
+
+          const gitment = new Gitment({
+            owner: '{{ site.gitment_owner }}',
+            repo: '{{ gitment_repo }}',
+            oauth: {
+              client_id: '{{ gitment_client_id }}',
+              client_secret: '{{ gitment_secret }}',
+            },
+            theme: myTheme,
+          })
+
+          gitment.render('container')
+        </script>
+        <!-- gitment 代码 -->
+      </div>
+      {% endif %}
+
+      {% if site.livere_uid %}
+      <hr>
+      <div id="btn-show-comment">
+        <div onclick="showComment()">显示评论</div>
+      </div>
+      <div id="comment" style="display: none">
+        <!-- 来必力 City 版安装代码 -->
+        <div id="lv-container" data-id="city" data-uid="{{ site.livere_uid }}">
+          <script type="text/javascript">
+            (function(d, s) {
+              var j, e = d.getElementsByTagName(s)[0];
+
+              if (typeof LivereTower === 'function') { return; }
+
+              j = d.createElement(s);
+              j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+              j.async = true;
+
+              e.parentNode.insertBefore(j, e);
+            })(document, 'script');
+          </script>
+          <noscript>为正常使用来必力评论功能请激活 JavaScript</noscript>
+        </div>
+        <!-- City 版安装代码已完成 -->
+      </div>
+      {% endif %}
+    {% endunless %}
+    {% endif %}
+
+    <script>
+      function showComment() {
+        if(document.getElementById("comment").style.display=="none") {
+          document.getElementById("comment").style.display="block";
+          document.getElementById("btn-show-comment").style.display="none";
+        }
+      }
+
+      function showReward() {
+        if (document.getElementsByClassName("reward-qr-code")[0].style.display=="none" ) {
+          document.getElementsByClassName("reward-qr-code")[0].style.display="block";
+        } else {
+          document.getElementsByClassName("reward-qr-code")[0].style.display="none";
+        }
+      }
+    </script>
+  </div>
+</div>

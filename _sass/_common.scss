@@ -1,0 +1,408 @@
+html {
+  font-family: Monaco, Helvetica, Tahoma, Arial, STXihei, "华文细黑",
+  "Microsoft YaHei", "微软雅黑", SimSun, "宋体", Heiti, "黑体", sans-serif;
+}
+
+::-webkit-selection {
+  background: #fffac4;
+  color: #111;
+  text-shadow: none;
+}
+
+::-moz-selection {
+  background: #fffac4;
+  color: #111;
+  text-shadow: none;
+}
+
+::-ms-selection {
+  background: #fffac4;
+  color: #111;
+  text-shadow: none;
+}
+
+::selection {
+  background: #fffac4;
+  color: #111;
+  text-shadow: none;
+}
+
+@mixin border-radius($radius) {
+  border-radius: $radius;
+}
+
+@mixin box-shadow($h-shadow, $v-shadow, $blur, $spread, $color) {
+  -webkit-box-shadow: $h-shadow $v-shadow $blur $spread $color;
+      -ms-box-shadow: $h-shadow $v-shadow $blur $spread $color;
+          box-shadow: $h-shadow $v-shadow $blur $spread $color;
+}
+
+@mixin material-transition() {
+  -webkit-transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+          transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+}
+
+@mixin material-box-shadow($depth:1) {
+  @if $depth==1 {
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24);
+        -ms-box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24);
+  }
+  @else if $depth==2 {
+    -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, .16), 0 3px 6px rgba(0, 0, 0, .23);
+        -ms-box-shadow: 0 3px 6px rgba(0, 0, 0, .16), 0 3px 6px rgba(0, 0, 0, .23);
+            box-shadow: 0 3px 6px rgba(0, 0, 0, .16), 0 3px 6px rgba(0, 0, 0, .23);
+  }
+  @else if $depth==3 {
+    -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, .19), 0 6px 6px rgba(0, 0, 0, .23);
+        -ms-box-shadow: 0 10px 20px rgba(0, 0, 0, .19), 0 6px 6px rgba(0, 0, 0, .23);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, .19), 0 6px 6px rgba(0, 0, 0, .23);
+  }
+  @else if $depth==4 {
+    -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, .25), 0 10px 10px rgba(0, 0, 0, .22);
+        -ms-box-shadow: 0 14px 28px rgba(0, 0, 0, .25), 0 10px 10px rgba(0, 0, 0, .22);
+            box-shadow: 0 14px 28px rgba(0, 0, 0, .25), 0 10px 10px rgba(0, 0, 0, .22);
+  }
+  @else if $depth==5 {
+    -webkit-box-shadow: 0 19px 38px rgba(0, 0, 0, .30), 0 15px 12px rgba(0, 0, 0, .22);
+        -ms-box-shadow: 0 19px 38px rgba(0, 0, 0, .30), 0 15px 12px rgba(0, 0, 0, .22);
+            box-shadow: 0 19px 38px rgba(0, 0, 0, .30), 0 15px 12px rgba(0, 0, 0, .22);
+  }
+  @include material-transition();
+}
+
+@mixin flex($direction:row) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: -webkit-flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: $direction;
+          flex-direction: $direction;
+}
+
+@-webkit-keyframes pulse {
+  to {
+    opacity: 0;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes pulse {
+  to {
+    opacity: 0;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@-webkit-keyframes twinkle {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes twinkle {
+  to {
+    opacity: 0;
+  }
+}
+
+/* (header.html) CSS start */
+header {
+  @include flex(column);
+  -webkit-box-pack: center;
+     -ms-flex-pack: center;
+   justify-content: center;
+
+  margin: 30px 0 0;
+  padding: 0 30px;
+
+  a {
+    color: #111;
+    text-decoration: none;
+    @include material-transition();
+    font-size: 2em;
+    font-weight: bold;
+  }
+
+  a::before {
+    -webkit-animation: twinkle 1s linear infinite;
+            animation: twinkle 1s linear infinite;
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #ffea00;
+  }
+}
+
+.title {
+  position: relative;
+  display: inline-block;
+  margin: 30px auto 30px;
+  padding: 0;
+  color: #111;
+  font-size: 112.5%;
+  text-align: center;
+}
+
+.title .title-tip {
+  visibility: hidden;
+  width: 85px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  position: absolute;
+  z-index: 1;
+  top: 5px;
+  right: 120%;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+
+@media (max-width: 415px) {
+  header {
+    a {
+      font-size: 1.7em;
+    }
+  }
+}
+
+@media (min-width: 769px) {
+  .title .title-tip::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent transparent #555;
+  }
+
+  .title:hover .title-tip {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+/* (header.html) CSS end */
+
+/* (content.html) CSS start */
+.page-content {
+  width: 100%;
+  text-align: justify;
+
+  -webkit-box-flex: 1;
+          -ms-flex: 1;
+              flex: 1;
+
+  p {
+    color: #666;
+    font-size: 18px;
+    line-height: 1.8;
+    margin: 0 0 30px;
+  }
+
+  a {
+    text-decoration: none;
+    color: #1976D2;
+    border-bottom: 1px dashed #1976D2;
+    @include material-transition();
+  }
+
+  a:hover {
+    color: #111;
+    border-bottom: 2px solid #ffea00;
+  }
+}
+
+.content {
+  max-width: 840px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+.licenses {
+  margin-top: 60px;
+
+  p {
+    text-align: center;
+  }
+}
+
+a[class="gitment-header-issue-link"],
+a[class="gitment-editor-avatar"],
+a[class="gitment-editor-login-link"],
+a[class="gitment-editor-footer-tip"],
+a[class="gitment-footer-project-link"] {
+  border-bottom: none !important;
+
+  &:hover {
+    border-bottom: none !important;
+  }
+}
+
+.reward {
+  text-align: center;
+
+  p {
+    color: #999;
+    margin: 30px 0 10px 0;
+  }
+}
+
+.reward-qr-code {
+  @include flex();
+
+  img {
+    width: 200px;
+    height: 200px;
+    margin: 0 40px;
+  }
+}
+
+.alipay {
+  display: inline-block;
+
+  span {
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    color: #1CA9E6;
+    margin: 20px 0;
+  }
+}
+
+.wechat {
+  @extend .alipay;
+
+  span {
+    color: #1BB823;
+  }
+}
+
+#btn-show-reward {
+  text-align: center;
+
+  div {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+    font-size: 2em;
+    line-height: 60px;
+    text-align: center;
+    background: #FFD740;
+  }
+}
+
+#btn-show-comment {
+  text-align: center;
+
+  div {
+    display: inline-block;
+    padding: 5px 10px;
+    color: #999;
+    cursor: pointer;
+    font-size: 18px;
+    border: 2px solid #999;
+    border-radius: 4px;
+  }
+
+  div:hover {
+    color: #666;
+    border: 2px solid #666;
+  }
+}
+
+@media (max-width: 415px) {
+  .page-content {
+    p {
+      font-size: 1em;
+      line-height: 1.7;
+    }
+  }
+
+  .content {
+    padding: 0 20px;
+  }
+
+  .alipay, .wechat {
+
+    span {
+      font-size: 1em;
+    }
+  }
+
+  #btn-show-reward {
+    div {
+      width: 50px;
+      height: 50px;
+      font-size: 1.5em;
+      line-height: 50px;
+    }
+  }
+
+  #btn-show-comment {
+    div {
+      font-size: 1em;
+      border: 1px solid #999;
+    }
+  }
+}
+/* (content.html) CSS end */
+
+/* (footer.html) CSS start */
+footer {
+  a {
+    text-decoration: none;
+  }
+}
+/* (footer.html) CSS end */
+
+
+/* (copyright.html) CSS start */
+.copyright {
+  text-align: center;
+  padding: 50px 20px 20px 20px;
+
+  p {
+    color: #999;
+    font-size: 1em;
+  }
+
+  a {
+    color: #999;
+    border-bottom: 1px dashed #999;
+    @include material-transition();
+  }
+
+  a:hover {
+    color: #111;
+    border-bottom: 2px solid #ffea00;
+  }
+}
+
+@media (max-width:415px) {
+  .copyright {
+    padding: 20px;
+
+    p {
+      font-size: 0.7em;
+      line-height: 1.7;
+    }
+  }
+}
+/* (copyright.html) CSS end */

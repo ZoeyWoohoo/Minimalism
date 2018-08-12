@@ -1,0 +1,136 @@
+@import "common";
+
+html {
+  text-rendering: optimizeLegibility;
+  text-align: justify;
+}
+
+body {
+  @include flex(column);
+
+  max-width: 840px;
+  min-height: 100vh;
+  height: auto;
+  margin: 0 auto;
+
+  background: #ffffff;
+}
+
+a {
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.header {
+  @include flex();
+  -webkit-box-pack: space-evenly;
+     -ms-flex-pack: space-evenly;
+   justify-content: space-evenly;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+
+  padding: 20px;
+  margin: 40px 0 60px;
+
+  a {
+    color: #111;
+    font-size: 1.5em;
+    border-bottom: 2px dashed #111;
+    @include material-transition();
+  }
+}
+
+.article-content {
+  -webkit-box-flex: 1;
+          -ms-flex: 1;
+              flex: 1;
+}
+
+.article-block {
+  padding: 0 20px;
+  @include material-transition();
+}
+
+.article-header {
+  @include flex();
+  -webkit-box-align: center;
+     -ms-flex-align: center;
+        align-items: center;
+  -webkit-box-pack: justify;
+     -ms-flex-pack: justify;
+   justify-content: space-between;
+}
+
+@media (min-width: 769px) {
+  .header {
+    a:hover {
+      color: #111;
+      -webkit-transform: scale(1.05);
+              transform: scale(1.05);
+      border-bottom: 2px solid #ffea00;
+    }
+  }
+
+  .article-header {
+    &:hover {
+      .article-title {
+        border-bottom: 2px solid #ffea00;
+      }
+    }
+  }
+}
+
+.article-title {
+  color: #111;
+  font-size: 1.3em;
+  border-bottom: 2px solid #ffffff;
+}
+
+.article-date {
+  color: #666;
+  font-size: 0.9em;
+}
+
+.article-excerpt {
+  margin-bottom: 40px;
+
+  p {
+    margin: 0;
+    color: #666;
+    font-size: 1em;
+    line-height: 1.6em;
+  }
+}
+
+@media (max-width: 415px) {
+  .header {
+    margin: 0 0 20px 0;
+    -webkit-box-pack: justify;
+       -ms-flex-pack: justify;
+     justify-content: space-between;
+
+    a {
+      font-size: .88em;
+    }
+  }
+
+  .article-header {
+    @include flex(column);
+    -webkit-box-align: start;
+       -ms-flex-align: start;
+    align-items: flex-start;
+  }
+
+  .article-title {
+    font-size: 1.2em;
+    margin: auto auto 0 0;
+  }
+
+  .article-date {
+    font-size: .9em;
+  }
+
+  .article-excerpt p {
+    font-size: .9em;
+  }
+}

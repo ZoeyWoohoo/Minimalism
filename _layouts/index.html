@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "zh-cmn-Hans" }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ site.title }}</title>
+
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    {% include favicon.html %}
+
+    <link rel="stylesheet" href="{{ "/assets/css/index.css" }}" />
+    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+    {% seo %}
+    {% include statistics_head.html %}
+  </head>
+  <body>
+    <div class="index-avatar">
+      {% if site.avatar %}
+      <a href="/articles"><img src="{{ site.avatar }}"></a>
+      {% else %}
+        {% assign image_files = site.static_files | where: "image", true %}
+        {% for image in image_files %}
+          {% if image.basename == 'avatar' %}
+          <a href="/articles"><img src="{{ image.path }}"></a>
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+    </div>
+    <div class="index-content">
+      <h1>{{ site.name }}</h1>
+      <p>{{ site.description }}</p>
+      <div class="index-contact">
+        <p>
+          {% if site.twitter %}
+          <span><a href="{{ site.twitter }}" target="_blank"><i class="fa fa-twitter"></i></a></span>
+          {% endif %}
+          {% if site.weibo %}
+          <span><a href="{{ site.weibo }}" target="_blank"><i class="fa fa-weibo"></i></a></span>
+          {% endif %}
+          {% if site.github %}
+          <span><a href="{{ site.github }}" target="_blank"><i class="fa fa-github"></i></a></span>
+          {% endif %}
+          {% if site.email %}
+          <span><a href="{{ site.email }}" target="_blank"><i class="fa fa-envelope"></i></a></span>
+          {% endif %}
+          {% if site.rss and site.rss == true %}
+          <span><a href="/feed.xml" target="_blank"><i class="fa fa-rss"></i></a></span>
+          {% endif %}
+        </p>
+      </div>
+    </div>
+
+    {% if site.lock_menu and site.lock_menu == true %}
+    <script src="{{ "/assets/js/lock_menu.js" }}"></script>
+    {% endif %}
+
+    {% include statistics_body.html %}
+  </body>
+</html>
