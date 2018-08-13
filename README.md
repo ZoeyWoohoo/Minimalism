@@ -1,5 +1,6 @@
 # Minimalism
 
+[![Build Status](https://travis-ci.org/showzeng/Minimalism.svg?branch=master)](https://travis-ci.org/showzeng/Minimalism)
 [![Gem Version](https://badge.fury.io/rb/jekyll-theme-minimalism.svg)](https://badge.fury.io/rb/jekyll-theme-minimalism)
 
 ![screenshot](./docs/screenshot.png)
