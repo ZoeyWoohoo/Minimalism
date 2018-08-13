@@ -1,7 +1,9 @@
 # Minimalism
 
 [![Build Status](https://travis-ci.org/showzeng/Minimalism.svg?branch=master)](https://travis-ci.org/showzeng/Minimalism)
+[![Jekyll Version](https://img.shields.io/badge/Jekyll-3.8-blue.svg)](https://jekyllrb.com/)
 [![Gem Version](https://badge.fury.io/rb/jekyll-theme-minimalism.svg)](https://badge.fury.io/rb/jekyll-theme-minimalism)
+[![Packagist](https://img.shields.io/packagist/l/doctrine/orm.svg?style=popout)](./LICENSE.txt)
 
 ![screenshot](./docs/screenshot.png)
 
@@ -72,6 +74,10 @@ remote_theme: showzeng/Minimalism
 - [ ] Math support with LaTeX (数学公式支持)
 
 ## Change log
+
+**V0.1.7 (2018/08/12 22:12)**
+- 修改 gem 包依赖
+- 稳定版本
 
 **V0.1.6 (2018/08/12 16:47)**
 - 修复 gitment 的评论字体样式
