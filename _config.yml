@@ -1,9 +1,30 @@
 exclude:
   - script
   - docs
+  - vendor
 
 sass:
   style: compressed
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  -
+    scope:
+      path: "assets/img"
+    values:
+      image: true
+
+title: Minimalism
+name: minimalism
+description: Minimalism is a jekyll theme for minimalist
+
+github: https://github.com/showzeng/Minimalism
+rss: true
 
 plugins:
   - rouge
