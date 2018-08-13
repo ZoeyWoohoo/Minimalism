@@ -1,5 +1,7 @@
 # Minimalism
 
+[![Gem Version](https://badge.fury.io/rb/jekyll-theme-minimalism.svg)](https://badge.fury.io/rb/jekyll-theme-minimalism)
+
 ![screenshot](./docs/screenshot.png)
 
 Minimalism 是一款基于 Jekyll 为极简主义者打造的极简主题。你可以访问 [我的博客][blog] 或者 [主题 demo][demo] 来预览一下。
@@ -70,7 +72,11 @@ remote_theme: showzeng/Minimalism
 
 ## Change log
 
-**V0.1.4 (2018/08/12 11:36)**
+**V0.1.6 (2018/08/12 16:47)**
+- 修复 gitment 的评论字体样式
+- 加入持续集成测试
+
+**V0.1.5 (2018/08/12 11:36)**
 - 修复 gitment 模板语法错误
 - gitment 可正常使用
 
