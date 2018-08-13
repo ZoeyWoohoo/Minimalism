@@ -68,6 +68,7 @@
           }
 
           const gitment = new Gitment({
+            id: '{{ page.date }}'
             owner: '{{ site.gitment_owner }}',
             repo: '{{ site.gitment_repo }}',
             oauth: {
