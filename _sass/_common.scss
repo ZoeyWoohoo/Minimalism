@@ -244,12 +244,17 @@ a[class="gitment-header-issue-link"],
 a[class="gitment-editor-avatar"],
 a[class="gitment-editor-login-link"],
 a[class="gitment-editor-footer-tip"],
-a[class="gitment-footer-project-link"] {
+a[class="gitment-footer-project-link"],
+a[class="gitment-comment-name"] {
   border-bottom: none !important;
 
   &:hover {
     border-bottom: none !important;
   }
+}
+
+ul[class="gitment-comments-list"] li {
+  font-size: 1em;
 }
 
 .reward {
