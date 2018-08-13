@@ -21,12 +21,12 @@
   <body>
     <div class="index-avatar">
       {% if site.avatar %}
-      <a href="./articles"><img src="{{ site.avatar }}" alt="avatar"></a>
+      <a href="/articles"><img src="{{ site.avatar }}" alt="avatar"></a>
       {% else %}
         {% assign image_files = site.static_files | where: "image", true %}
         {% for image in image_files %}
           {% if image.basename == 'avatar' %}
-          <a href="/articles"><img src="{{ image.path }}"></a>
+          <a href="/articles"><img src="{{ image.path }}" alt="avatar"></a>
           {% endif %}
         {% endfor %}
       {% endif %}
