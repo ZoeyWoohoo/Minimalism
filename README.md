@@ -61,11 +61,9 @@ remote_theme: showzeng/Minimalism
 
 此外你有什么好的建议、需求或者是碰到什么问题，欢迎提交 [issue]，本主题还会不断完善。
 
-## 打赏
+## 致谢
 
-如果主题对你有帮助，并帮你节省了一些折腾的时间，可以考虑打赏，这是对我所做工作的最大肯定。
-
-![reward.png](./docs/reward.webp)
+博客主题文章的文字颜色及部分排版受凯哥 [HenCoder] 网站的启发，打赏样式受 [写代码的猴子的博客][Jaeger] 的启发，特此感谢。
 
 ## Todo
 
@@ -75,29 +73,13 @@ remote_theme: showzeng/Minimalism
 
 ## Change log
 
-**V0.1.7 (2018/08/12 22:12)**
-- 修改 gem 包依赖
-- 稳定版本
+查看 [版本更新日志][Change Log]
 
-**V0.1.6 (2018/08/12 16:47)**
-- 修复 gitment 的评论字体样式
-- 加入持续集成测试
+## 打赏
 
-**V0.1.5 (2018/08/12 11:36)**
-- 修复 gitment 模板语法错误
-- gitment 可正常使用
+如果主题对你有帮助，并帮你节省了一些折腾的时间，可以考虑打赏，这是对我所做工作的最大肯定。
 
-**V0.1.4 (2018/08/12 11:25)**
-- 修复 gitment validation failed 错误
-
-**V0.1.3 (2018/08/12 11:17)**
-- 修复 gitment 模板配置错误
-
-**V0.1.2 (2018/08/12 22:46)**
-- 修复空 gem 包的 bug
-
-**V0.1.1 (2018/08/12 20:24)**
-- 修复缺少插件依赖配置
+![reward.png](./docs/reward.webp)
 
 ## License
 
@@ -108,3 +90,6 @@ The theme is available as open source under the terms of the [MIT License](https
 [license]: https://creativecommons.org/licenses/by-nc-nd/4.0/
 [wiki]: https://github.com/showzeng/Minimalism/wiki
 [issue]: https://github.com/showzeng/Minimalism/issues/new
+[Change Log]: https://github.com/showzeng/Minimalism/wiki/Change-Log
+[HenCoder]: https://hencoder.com/
+[Jaeger]: https://jaeger.itscoder.com/
