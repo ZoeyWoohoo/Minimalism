@@ -1,0 +1,226 @@
+::-webkit-selection {
+  background: #fffac4;
+  color: #111;
+  text-shadow: none;
+}
+
+::-moz-selection {
+  background: #fffac4;
+  color: #111;
+  text-shadow: none;
+}
+
+::-ms-selection {
+  background: #fffac4;
+  color: #111;
+  text-shadow: none;
+}
+
+::selection {
+  background: #fffac4;
+  color: #111;
+  text-shadow: none;
+}
+
+body {
+  margin: 0;
+  background-image: url("../img/background.webp");
+}
+
+.content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+         display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+     -ms-flex-direction: column;
+         flex-direction: column;
+  -webkit-box-pack: center;
+     -ms-flex-pack: center;
+   justify-content: center;
+  -webkit-box-align: center;
+     -ms-flex-align: center;
+        align-items: center;
+  margin: 0 60px;
+  height: 100vh;
+}
+
+.github-corner:hover .octo-arm {
+  animation: octocat-wave 560ms ease-in-out;
+}
+
+@keyframes octocat-wave {
+  0%, 100% {
+    transform: rotate(0);
+  }
+
+  20%, 60% {
+    transform: rotate(-25deg);
+  }
+
+  40%, 80% {
+    transform: rotate(10deg);
+  }
+}
+
+@media (max-width:500px) {
+  .github-corner:hover .octo-arm {
+    animation: none;
+  }
+
+  .github-corner .octo-arm {
+    animation: octocat-wave 560ms ease-in-out;
+  }
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  padding-top: 20px;
+  color: #111;
+}
+
+header > img {
+  width: 3.5em;
+  height: 3.5em;
+  margin-right: 0.5em;
+}
+
+header > a {
+  text-decoration: none;
+  font-family: 'Bungee Inline', cursive, monaco, Helvetica, Tahoma, Arial, sans-serif;
+  font-size: 1.8em;
+  color: #111;
+
+  -webkit-transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+          transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+}
+
+header > a:hover {
+  -webkit-text-shadow: 0 3px 6px rgba(0, 0, 0, .16), 0 3px 6px rgba(0, 0, 0, .23);
+      -ms-text-shadow: 0 3px 6px rgba(0, 0, 0, .16), 0 3px 6px rgba(0, 0, 0, .23);
+          text-shadow: 0 3px 6px rgba(0, 0, 0, .16), 0 3px 6px rgba(0, 0, 0, .23);
+}
+
+.macbookpro {
+  display: -webkit-box;
+  display: -ms-flexbox;
+         display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+     -ms-flex-direction: column;
+         flex-direction: column;
+  -webkit-box-align: center;
+     -ms-flex-align: center;
+        align-items: center;
+  -webkit-box-pack: center;
+     -ms-flex-pack: center;
+   justify-content: center;
+  -webkit-box-flex: 1;
+          -ms-flex: 1;
+              flex: 1;
+  width: 100%;
+  text-align: center;
+}
+
+.description {
+  color: #151513;
+  font: bold 200% Monaco, monospace, Helvetica, Tahoma, Arial, sans-serif;
+  border-right: .1em solid;
+  width: 27em;
+  width: 45ch;
+  margin: 0 0 2em;
+  white-space: nowrap;
+  overflow: hidden;
+  -webkit-animation: text 4.5s steps(45, end), caret .5s step-end infinite alternate;
+  animation: text 4.5s steps(45, end), caret .5s step-end infinite alternate;
+}
+
+@-webkit-keyframes text {
+  from {
+    width: 0;
+  }
+}
+
+@keyframes text {
+  from {
+    width: 0;
+  }
+}
+
+@-webkit-keyframes caret {
+  50% {
+    border-color: transparent;
+  }
+}
+
+@keyframes caret {
+  50% {
+    border-color: transparent;
+  }
+}
+
+.macbookpro > img {
+  display: inline-block;
+  max-width: 100vh;
+}
+
+footer {
+  width: 100%;
+  text-align: center;
+}
+
+footer > p {
+  font-family: Monaco, Helvetica, Tahoma, Arial, sans-serif;
+  font-size: 1.5em;
+  color: #666;
+  margin: 0 0 50px;
+}
+
+@media screen and (min-width: 700px) and (max-width: 1025px) {
+  .description {
+    width: auto !important;
+    white-space: normal;
+    border-right: none;
+    animation: none;
+  }
+
+  .macbookpro>img {
+    max-width: 60vh;
+  }
+}
+
+@media screen and (max-width: 415px) {
+  .content {
+    margin: 0 20px;
+  }
+
+  header > img {
+    width: 2.8em;
+    height: 2.8em;
+  }
+
+  header > a {
+    font-size: 1.5em;
+  }
+
+  .description {
+    width: auto !important;
+    white-space: normal;
+    border-right: none;
+    animation: none;
+  }
+
+  .description, footer p {
+    font-size: 1em;
+  }
+
+  .macbookpro > img {
+    max-width: 45vh;
+  }
+}
