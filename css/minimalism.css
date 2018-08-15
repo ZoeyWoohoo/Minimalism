@@ -134,7 +134,7 @@ header > a:hover {
   border-right: .1em solid;
   width: 27em;
   width: 45ch;
-  margin: 0 0 2em;
+  margin: 0 0 60px;
   white-space: nowrap;
   overflow: hidden;
   -webkit-animation: text 4.5s steps(45, end), caret .5s step-end infinite alternate;
@@ -165,7 +165,7 @@ header > a:hover {
   }
 }
 
-.macbookpro > img {
+.macbookpro img {
   display: inline-block;
   max-width: 100vh;
 }
@@ -190,7 +190,7 @@ footer > p {
     animation: none;
   }
 
-  .macbookpro>img {
+  .macbookpro img {
     max-width: 60vh;
   }
 }
@@ -220,7 +220,7 @@ footer > p {
     font-size: 1em;
   }
 
-  .macbookpro > img {
+  .macbookpro img {
     max-width: 45vh;
   }
 }
