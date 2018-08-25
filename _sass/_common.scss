@@ -230,6 +230,19 @@ header {
   max-width: 840px;
   margin: 0 auto;
   padding: 0 30px;
+
+  div[class*="language-"] {
+      margin-bottom: 30px;
+  }
+}
+
+twitterwidget {
+    margin: 10px auto 40px !important;
+}
+
+iframe, embed {
+    margin-bottom: 15px;
+    max-width: 100%;
 }
 
 .licenses {
@@ -342,6 +355,10 @@ ul[class="gitment-comments-list"] li {
 
   .content {
     padding: 0 20px;
+  }
+
+  iframe, embed {
+      height: auto;
   }
 
   .alipay, .wechat {
