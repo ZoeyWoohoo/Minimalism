@@ -1,8 +1,3 @@
-exclude:
-  - script
-  - docs
-  - vendor
-
 sass:
   style: compressed
 
@@ -34,5 +29,8 @@ plugins:
   - jemoji
 
 exclude:
+  - script
+  - docs
+  - vendor
   - Gemfile
   - Gemfile.lock
