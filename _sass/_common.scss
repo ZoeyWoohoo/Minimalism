@@ -314,13 +314,13 @@ ul[class="gitment-comments-list"] li {
 
   div {
     display: inline-block;
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     color: #fff;
     cursor: pointer;
-    font-size: 2em;
-    line-height: 60px;
+    font-size: 1.5em;
+    line-height: 50px;
     text-align: center;
     background: #FFD740;
   }
@@ -335,13 +335,13 @@ ul[class="gitment-comments-list"] li {
     color: #999;
     cursor: pointer;
     font-size: 18px;
-    border: 2px solid #999;
+    border: 1px solid #999;
     border-radius: 4px;
   }
 
   div:hover {
     color: #666;
-    border: 2px solid #666;
+    border: 1px solid #666;
   }
 }
 
@@ -370,10 +370,10 @@ ul[class="gitment-comments-list"] li {
 
   #btn-show-reward {
     div {
-      width: 50px;
-      height: 50px;
-      font-size: 1.5em;
-      line-height: 50px;
+      width: 40px;
+      height: 40px;
+      font-size: 1.2em;
+      line-height: 40px;
     }
   }
 
