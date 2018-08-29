@@ -80,8 +80,8 @@ pre {
 
   code {
     border: none;
-    font-family: monaco-webfont, Monaco, Helvetica, Tahoma, Arial, STXihei, "华文细黑",
-    "Microsoft YaHei", "微软雅黑", SimSun, "宋体", Heiti, "黑体", sans-serif !important;
+    font-family: Monaco, Helvetica, Tahoma, Arial, STXihei, "华文细黑",
+     "Microsoft YaHei", "微软雅黑", SimSun, "宋体", Heiti, "黑体", sans-serif !important;
   }
 }
 
@@ -98,6 +98,8 @@ pre {
 }
 
 code[class="highlighter-rouge"] {
+  font-family: Monaco, Helvetica, Tahoma, Arial, STXihei, "华文细黑",
+   "Microsoft YaHei", "微软雅黑", SimSun, "宋体", Heiti, "黑体", sans-serif;
   color: #2C3E50;
   background-color: #D6DBDF;
   border: 1px solid #dadada;
