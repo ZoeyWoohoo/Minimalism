@@ -17,6 +17,7 @@ Minimalism 是一款基于 Jekyll 为极简主义者打造的极简主题。你�
 - SEO 优化
 - 文章默认采用 [CC BY-NC-ND 4.0][license] 协议对著作权进行保护，支持 emoji 表情
 - 支持禁止复制、禁止右键菜单、复制附带版权声明等多种功能
+- 支持文章图片查看大图
 - 支持文章打赏 (微信、支付宝)
 - 支持评论功能 (目前支持来必力、gitment)
 - 支持站点统计 (目前支持谷歌统计、百度统计、友盟 cnzz 统计)
@@ -64,6 +65,8 @@ remote_theme: showzeng/Minimalism
 ## 致谢
 
 博客主题文章的文字颜色及部分排版受凯哥 [HenCoder] 网站的启发，打赏样式受 [写代码的猴子的博客][Jaeger] 的启发，特此感谢。
+
+文章图片查看大图由 [zooming](https://github.com/kingdido999/zooming) 提供支持，特此感谢。
 
 ## Todo
 
