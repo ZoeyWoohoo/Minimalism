@@ -9,6 +9,8 @@ window.onload = function() {
   var images = document.getElementById('post-content').getElementsByTagName('img');
   var zooming = new Zooming();
   for (var i=0; i<images.length; i++){
-    zooming.listen(images[i]);
+    if (images[i].className == "") {
+      zooming.listen(images[i]);
+    }
   }
 }
