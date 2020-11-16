@@ -1,4 +1,4 @@
-# ~~Minimalism(Deprecated)~~
+# ~~Minimalism~~(Deprecated)
 
 [![Build Status](https://travis-ci.org/showzeng/Minimalism.svg?branch=master)](https://travis-ci.org/showzeng/Minimalism)
 [![Jekyll Version](https://img.shields.io/badge/Jekyll-3.8-blue.svg)](https://jekyllrb.com/)
@@ -9,7 +9,7 @@
 
 ~~Minimalism 是一款基于 Jekyll 为极简主义者打造的极简主题。你可以访问 [我的博客][blog] 或者 [主题 demo][demo] 来预览一下。~~
 
-> 因为觉得没有意义也没有意愿维护这个主题了，这个主题已经被放弃了。
+> :warning: 因为觉得没有意义也没有意愿维护这个主题了，此主题已被放弃。如有需要可基于此仓库自行拓展修改。
 
 ## 特性
 
